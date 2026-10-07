@@ -4,7 +4,7 @@ import {Upload,Database,SlidersHorizontal,BrainCircuit,BarChart3,Download,CheckC
 import {LineChart,Line,XAxis,YAxis,CartesianGrid,Tooltip,ResponsiveContainer,BarChart,Bar} from "recharts";
 import "./index.css";
 
-const API="/api";
+const API = `${import.meta.env.VITE_API_URL}/api`;
 type Info={dataset_id:string,filename:string,rows:number,columns:number,columns_info:any[],preview:any[]};
 type Result={algorithm:string,metrics:any,cluster_counts:any,labels:number[],centers?:any,medoids?:any};
 
