@@ -1,7 +1,7 @@
 fastapi
 uvicorn[standard]
+python-multipart
 pandas
 numpy
 scikit-learn
 openpyxl
-python-multipart

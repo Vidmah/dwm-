@@ -1,4 +1,5 @@
 from fastapi import FastAPI, UploadFile, File, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel
 import pandas as pd
@@ -10,6 +11,13 @@ from sklearn.metrics import silhouette_score, davies_bouldin_score, calinski_har
 from sklearn.decomposition import PCA
 
 app = FastAPI(title="DataMine Studio API", version="1.0.0")
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 DATASETS = {}
 
 class DataRequest(BaseModel):
